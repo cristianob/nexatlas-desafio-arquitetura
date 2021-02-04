@@ -10,7 +10,7 @@ describe('message component', () => {
     const { getByTestId } = render(<Message message={mockedMessage} />)
 
     const messageField = getByTestId('message-text')
-    expect(messageField.children).toHaveLength(2)
+    expect(messageField.children).toHaveLength(1)
     expect(messageField.children).toContain(mockedMessage)
   })
 })
