@@ -4,13 +4,13 @@ module.exports = {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{ts,tsx}',
     '!<rootDir>/src/**/index.ts',
-    '!**/*.d.ts',
+    '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',
   testPathIgnorePatterns: ['<rootDir>/node_modules/'],
   testEnvironment: 'jsdom',
   transformIgnorePatterns: ['node_modules/(?!react-native|react-navigation)/'],
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
-  },
-};
+    '@/(.*)': '<rootDir>/src/$1'
+  }
+}

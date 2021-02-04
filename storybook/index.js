@@ -1,20 +1,24 @@
-import {getStorybookUI, configure, addDecorator} from '@storybook/react-native';
-import {withKnobs} from '@storybook/addon-knobs';
+import {
+  getStorybookUI,
+  configure,
+  addDecorator
+} from '@storybook/react-native'
+import { withKnobs } from '@storybook/addon-knobs'
 
-import {loadStories} from './storyLoader';
+import { loadStories } from './storyLoader'
 
-import './rn-addons';
+import './rn-addons'
 
 // enables knobs for all stories
-addDecorator(withKnobs);
+addDecorator(withKnobs)
 
 // import stories
 configure(() => {
-  loadStories();
-}, module);
+  loadStories()
+}, module)
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters
 // To find allowed options for getStorybookUI
-const StorybookUIRoot = getStorybookUI({port: 7007, host: 'localhost'});
+const StorybookUIRoot = getStorybookUI({ port: 7007, host: 'localhost' })
 
-export default StorybookUIRoot;
+export default StorybookUIRoot
