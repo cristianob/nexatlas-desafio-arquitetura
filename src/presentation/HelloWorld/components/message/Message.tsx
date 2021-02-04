@@ -10,7 +10,7 @@ const Message: React.FC<MessageProps> = (props: MessageProps) => {
 
   return (
     <View>
-      <Text testID="message-text">{message}a</Text>
+      <Text testID="message-text">{message}</Text>
     </View>
   )
 }
