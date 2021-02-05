@@ -1,11 +1,13 @@
+import { UniqueEntityID } from '@/core/domain'
+import { EntityProps } from '@/core/domain/Entity'
 import { Observable } from 'rxjs'
 
 export interface IDatabaseModelCreate<T> {
   create(model: T): Promise<void>
 }
 
-export interface IDatabaseModelUpdate<T> {
-  update(model: T): Promise<void>
+export interface IDatabaseModelUpdate {
+  update(model: EntityProps, id: UniqueEntityID): Promise<void>
 }
 
 export interface IDatabaseModelDelete {

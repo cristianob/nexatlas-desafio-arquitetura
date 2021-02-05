@@ -4,7 +4,11 @@ const isEntity = (v: any): v is Entity<any> => {
   return v instanceof Entity
 }
 
-export abstract class Entity<T> {
+export interface EntityProps {
+  [key: string]: any
+}
+
+export abstract class Entity<T extends EntityProps> {
   protected readonly id: UniqueEntityID
   public readonly props: T
 
