@@ -1,5 +1,5 @@
 import React from 'react'
-import Message from '@/presentation/HelloWorld/components/message/Message'
+import { Message } from '@/presentation/components/message'
 
 const STORYBOOK_START = false
 
