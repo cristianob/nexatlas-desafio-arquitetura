@@ -15,7 +15,7 @@
     "noUnusedLocals": false,
     "skipLibCheck": true,
     "sourceMap": true,
-    "strict": true,
+    "strict": false,
     "target": "es2017",
     "baseUrl": "src",
     "paths": {
@@ -23,7 +23,7 @@
     }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["node_modules", "**/*.test.tsx", "**/*.spec.ts"],
+  "exclude": ["node_modules", "**/*.test.tsx"],
   "types": ["typePatches"],
   "jest": {
     "globals": {

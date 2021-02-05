@@ -11,7 +11,8 @@
     "plugin:react/recommended"
   ],
   "parserOptions": {
-    "project": "./tsconfig.json"
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true
   },
   "plugins": ["react"],
   "rules": {
@@ -22,7 +23,12 @@
     "@typescript-eslint/return-await": "off",
     "@typescript-eslint/no-namespace": "off",
     "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/prefer-readonly": "off",
+    "@typescript-eslint/consistent-type-assertions": "off",
+    "@typescript-eslint/no-extraneous-class": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
     "no-redeclare": "off",
-    "import/export": "off"
+    "import/export": "off",
+    "space-before-function-paren": "off"
   }
 }
