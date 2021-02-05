@@ -7,6 +7,7 @@ module.exports = {
     '!<rootDir>/src/**/*.stories.tsx',
     '!<rootDir>/src/core/**/*',
     '!<rootDir>/src/**/protocols/**/*',
+    '!<rootDir>/src/**/tests/**/*',
     '!**/*.d.ts'
   ],
   coverageDirectory: 'coverage',
