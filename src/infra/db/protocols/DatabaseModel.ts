@@ -21,3 +21,11 @@ export interface IDatabaseModelGet<T> {
 export interface IDatabaseModelObserve<T> {
   observe(id: any): Observable<T>
 }
+
+export interface IDatabaseModelGetCollection<T> {
+  getCollection(): Promise<T[]>
+}
+
+export interface IDatabaseModelCollectionObserve<T> {
+  observeCollection(): Observable<T[]>
+}
