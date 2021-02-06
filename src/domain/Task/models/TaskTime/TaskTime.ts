@@ -1,9 +1,11 @@
 import { Entity } from '@/core/domain'
 
-interface TaskTimeProps {
+export interface TaskTimeProps {
   startTime: Date
   endTime: Date
 }
+
+export const TaskTimePropsArray = ['startTime', 'endTime']
 
 export class TaskTime extends Entity<TaskTimeProps> {
   public static create(props: TaskTimeProps): TaskTime {

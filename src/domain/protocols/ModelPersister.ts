@@ -7,19 +7,19 @@ export interface PersisterCreator<T> {
 }
 
 export interface PersisterUpdater {
-  update(model: EntityProps, id: UniqueEntityID): Promise<void>
+  update(model: Partial<EntityProps>, id: UniqueEntityID): Promise<void>
 }
 
 export interface PersisterDeleter {
-  delete(id: any): Promise<void>
+  delete(id: UniqueEntityID): Promise<void>
 }
 
 export interface PersisterGetter<T> {
-  get(id: any): Promise<T>
+  get(id: UniqueEntityID): Promise<T>
 }
 
 export interface PersisterObserver<T> {
-  observe(id: any): Observable<T>
+  observe(id: UniqueEntityID): Observable<T>
 }
 
 export interface PersisterGetCollection<T> {

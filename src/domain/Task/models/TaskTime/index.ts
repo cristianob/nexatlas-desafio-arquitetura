@@ -1,3 +1,3 @@
-import { TaskTime } from './TaskTime'
+import { TaskTime, TaskTimeProps } from './TaskTime'
 
-export { TaskTime }
+export { TaskTime, TaskTimeProps }

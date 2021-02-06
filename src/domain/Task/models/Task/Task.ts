@@ -1,9 +1,11 @@
 import { Entity, UniqueEntityID } from '@/core/domain'
-interface TaskProps {
+export interface TaskProps {
   desc: string
   dueDate: Date
   done: boolean
 }
+
+export const TaskPropsArray = ['desc', 'dueDate', 'done']
 
 export class Task extends Entity<TaskProps> {
   public static create(props: TaskProps, id?: UniqueEntityID): Task {
