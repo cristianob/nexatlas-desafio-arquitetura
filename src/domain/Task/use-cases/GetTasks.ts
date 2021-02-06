@@ -1,6 +1,6 @@
+import { Observable } from 'rxjs'
 import { UseCase } from '@/core/domain'
 import { PersisterCollectionObserver } from '@/domain/protocols/ModelPersister'
-import { Observable } from 'rxjs'
 import { Task } from '../models'
 
 export class GetTasksUseCase implements UseCase<void, Observable<Task[]>> {

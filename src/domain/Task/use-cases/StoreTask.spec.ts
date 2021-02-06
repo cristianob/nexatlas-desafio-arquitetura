@@ -1,10 +1,10 @@
 import * as Faker from 'faker'
-import { DatabaseModelCreateSpy } from '@/infra/db/tests/mock'
+import { PersisterCreatorSpy } from '@/domain/tests/mock'
 import { Task } from '../models'
 import { StoreTaskUseCase } from './StoreTask'
 
 const makeSUT = () => {
-  const spy = new DatabaseModelCreateSpy<Task>()
+  const spy = new PersisterCreatorSpy<Task>()
   const sut = new StoreTaskUseCase(spy)
 
   return { sut, spy }

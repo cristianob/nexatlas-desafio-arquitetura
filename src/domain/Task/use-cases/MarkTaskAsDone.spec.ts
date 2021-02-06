@@ -1,10 +1,10 @@
 import * as faker from 'faker'
-import { DatabaseModelUpdateSpy } from '@/infra/db/tests/mock'
+import { PersisterUpdaterSpy } from '@/domain/tests/mock'
 import { MarkTasAsDoneUseCase } from './MarkTaskAsDone'
 import { UniqueEntityID } from '@/core/domain'
 
 const makeSUT = () => {
-  const spy = new DatabaseModelUpdateSpy()
+  const spy = new PersisterUpdaterSpy()
   const sut = new MarkTasAsDoneUseCase(spy)
 
   return { sut, spy }

@@ -1,11 +1,8 @@
 import { UniqueEntityID } from '@/core/domain'
 import { EntityProps } from '@/core/domain/Entity'
-import {
-  PersisterCreator,
-  PersisterUpdater
-} from '../../../domain/protocols/ModelPersister'
+import { PersisterCreator, PersisterUpdater } from '../protocols/ModelPersister'
 
-export class DatabaseModelCreateSpy<T> implements PersisterCreator<T> {
+export class PersisterCreatorSpy<T> implements PersisterCreator<T> {
   public model: T
 
   async create(model: T): Promise<void> {
@@ -14,7 +11,7 @@ export class DatabaseModelCreateSpy<T> implements PersisterCreator<T> {
   }
 }
 
-export class DatabaseModelUpdateSpy implements PersisterUpdater {
+export class PersisterUpdaterSpy implements PersisterUpdater {
   public props: EntityProps
   public id: UniqueEntityID
 
