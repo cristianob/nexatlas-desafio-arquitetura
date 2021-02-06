@@ -1,24 +1,23 @@
 import { Observable, queueScheduler, scheduled } from 'rxjs'
 import * as Faker from 'faker'
-import { IDatabaseModelCollectionObserve } from '@/infra/db/protocols/DatabaseModel'
+import { PersisterCollectionObserver } from '@/domain/protocols/ModelPersister'
 import { GetTasksUseCase } from './GetTasks'
 import { Task } from '../models'
-import { TaskDescription } from '../models/Task/TaskFields'
 
 class TaskModelCollectionObserveSpy
-  implements IDatabaseModelCollectionObserve<Task> {
+  implements PersisterCollectionObserver<Task> {
   public task1: Task
   public task2: Task
 
   observeCollection(): Observable<Task[]> {
     this.task1 = Task.create({
-      desc: TaskDescription.create(Faker.lorem.words(5)),
+      desc: Faker.lorem.words(5),
       dueDate: new Date(),
       done: false
     })
 
     this.task2 = Task.create({
-      desc: TaskDescription.create(Faker.lorem.words(5)),
+      desc: Faker.lorem.words(5),
       dueDate: new Date(),
       done: false
     })

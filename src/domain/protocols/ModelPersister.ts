@@ -2,30 +2,30 @@ import { UniqueEntityID } from '@/core/domain'
 import { EntityProps } from '@/core/domain/Entity'
 import { Observable } from 'rxjs'
 
-export interface IDatabaseModelCreate<T> {
+export interface PersisterCreator<T> {
   create(model: T): Promise<void>
 }
 
-export interface IDatabaseModelUpdate {
+export interface PersisterUpdater {
   update(model: EntityProps, id: UniqueEntityID): Promise<void>
 }
 
-export interface IDatabaseModelDelete {
+export interface PersisterDeleter {
   delete(id: any): Promise<void>
 }
 
-export interface IDatabaseModelGet<T> {
+export interface PersisterGetter<T> {
   get(id: any): Promise<T>
 }
 
-export interface IDatabaseModelObserve<T> {
+export interface PersisterObserver<T> {
   observe(id: any): Observable<T>
 }
 
-export interface IDatabaseModelGetCollection<T> {
+export interface PersisterGetCollection<T> {
   getCollection(): Promise<T[]>
 }
 
-export interface IDatabaseModelCollectionObserve<T> {
+export interface PersisterCollectionObserver<T> {
   observeCollection(): Observable<T[]>
 }
