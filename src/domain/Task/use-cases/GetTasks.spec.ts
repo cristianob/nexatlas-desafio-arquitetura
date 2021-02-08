@@ -1,9 +1,13 @@
+import 'reflect-metadata'
 import { Observable, queueScheduler, scheduled } from 'rxjs'
 import * as Faker from 'faker'
+import { container, injectable } from 'tsyringe'
+
 import { PersisterCollectionObserver } from '@/domain/protocols/ModelPersister'
 import { GetTasksUseCase } from './GetTasks'
 import { Task } from '../models'
 
+@injectable()
 class TaskModelCollectionObserveSpy
   implements PersisterCollectionObserver<Task> {
   public task1: Task
@@ -34,12 +38,23 @@ class TaskModelCollectionObserveSpy
 
 const makeSUT = () => {
   const spy = new TaskModelCollectionObserveSpy()
-  const sut = new GetTasksUseCase(spy)
+
+  const sut = container
+    .createChildContainer()
+    .register<PersisterCollectionObserver<Task>>(
+      'TaskPersisterCollectionObserver',
+      TaskModelCollectionObserveSpy
+    )
+    .resolve(GetTasksUseCase)
 
   return { sut, spy }
 }
 
 describe('MarkTaskAsDone use case', () => {
+  beforeEach(() => {
+    container.clearInstances()
+  })
+
   it('should receive an observable when executed', async () => {
     const { sut, spy } = makeSUT()
 
