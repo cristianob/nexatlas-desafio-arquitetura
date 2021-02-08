@@ -5,7 +5,6 @@ module.exports = {
     '<rootDir>/src/**/*.{ts,tsx}',
     '!<rootDir>/src/**/index.{ts,tsx}',
     '!<rootDir>/src/**/*.stories.tsx',
-    '!<rootDir>/src/core/**/*',
     '!<rootDir>/src/**/protocols/**/*',
     '!<rootDir>/src/**/tests/**/*',
     '!**/*.d.ts'
