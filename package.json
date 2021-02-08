@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "react-native run-android && react-native log-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest --passWithNoTests --no-cache --runInBand",
@@ -17,15 +17,17 @@
   },
   "dependencies": {
     "@nozbe/watermelondb": "^0.20.0",
-    "@nozbe/with-observables": "^1.0.8",
     "react": "16.13.1",
     "react-native": "0.63.4",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.6.3",
     "shallow-equal-object": "^1.1.1",
+    "tsyringe": "^4.4.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-proposal-decorators": "^7.12.13",
     "@babel/runtime": "^7.8.4",
     "@react-native-community/eslint-config": "^1.1.0",
@@ -48,6 +50,7 @@
     "babel-jest": "^25.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-config-prettier-standard": "^4.0.0",
